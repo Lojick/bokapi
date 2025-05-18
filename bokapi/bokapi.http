@@ -1,0 +1,6 @@
+@bokapi_HostAddress = http://localhost:5180
+
+GET {{bokapi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
