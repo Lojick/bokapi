@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore;
 [Route("api/[controller]")]
 public class BookController : ControllerBase
 {
-    private readonly ApplicationDbContext _context;
+    private readonly LibraryContext _context;
 
-    public BookController(ApplicationDbContext context)
+    public BookController(LibraryContext context)
     {
         _context = context;
     }
