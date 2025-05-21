@@ -16,3 +16,12 @@ public class Book
     [MaxLength(100, ErrorMessage = "Genre can't be more than 100 characters.")]
     public string Genre { get; set; } = "";
 }
+
+public class BookInfo
+{
+    public int Id { get; set; }
+    public string Title { get; set; }
+    public string Author { get; set; }
+    public string Genre { get; set; }
+    public int Year { get; set; }
+}
