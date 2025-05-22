@@ -82,6 +82,12 @@ public class BookController : ControllerBase
     [HttpGet("search")]
     public async Task<ActionResult<IEnumerable<Book>>> SearchBooksByTitle([FromQuery]string title)
     {
+
+        if (string.IsNullOrWhiteSpace(title))
+        {
+            return BadRequest(new { message = "Titeln kan inte vara tom." });
+        }
+
         var books = await _context.Books
             .Where(b => b.Title.ToLower().Contains(title.ToLower()))
             .ToListAsync();
