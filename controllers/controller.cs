@@ -24,7 +24,7 @@ public class BookController : ControllerBase
     {
         _context.Books.Add(book);
         await _context.SaveChangesAsync();
-        return CreatedAtAction(nameof(GetBook), new { id = book.Id }, book);
+        return CreatedAtAction(nameof(AddBook), new { id = book.Id }, book);
     }
 
     // PUT: /api/books/{id} for update a book
