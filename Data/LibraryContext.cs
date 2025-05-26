@@ -1,4 +1,7 @@
+using bokapi.Models;
 using Microsoft.EntityFrameworkCore;
+
+namespace bokapi.Data;
 
 public class LibraryContext : DbContext
 {

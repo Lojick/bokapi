@@ -1,6 +1,10 @@
+using System.Reflection;
+using bokapi.Data;
 using Microsoft.EntityFrameworkCore;
 
-public class Program
+namespace bokapi;
+
+public static class Program
 {
     public static void Main(string[] args)
     {
@@ -12,7 +16,11 @@ public class Program
             options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
         );
         builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen();
+        builder.Services.AddSwaggerGen(options =>
+        {
+            var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+            options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+        });
 
         var app = builder.Build();
 

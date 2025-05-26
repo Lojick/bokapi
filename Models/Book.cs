@@ -1,5 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 
+namespace bokapi.Models;
+
 public class Book
 {
     public int Id { get; set; }
