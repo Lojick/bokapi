@@ -55,7 +55,8 @@ public class BookController : ControllerBase
         {
             Title = book.Title,
             Author = book.Author,
-            Genre = book.Genre
+            Genre = book.Genre,
+            Year = book.Year!.Value
         });
         await _context.SaveChangesAsync();
         return CreatedAtAction(nameof(AddBook), new { id = addedBook.Entity.Id }, book);
